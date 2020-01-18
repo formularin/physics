@@ -1,2 +1,4 @@
 venv
 .DS_Store
+physics.egg-info
+*/**/__pycache__
