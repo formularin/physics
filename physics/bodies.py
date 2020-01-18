@@ -15,12 +15,12 @@ class Body:
         self.id = identifier
         self.velocity = velocity
 
-    def move(self, time):
+    def move(self, t):
         """
-        moves ball as far as it would go with current velocity in time seconds
+        moves ball as far as it would go with current velocity in `t` seconds
         """
-        horizontal_movement = int(self.velocity.horizontal_component * time)
-        vertical_movement = int( - (self.velocity.vertical_component * time))
+        horizontal_movement = int(self.velocity.horizontal_component * t)
+        vertical_movement = int( - (self.velocity.vertical_component * t))
 
         self.canvas.move(self.id, horizontal_movement, vertical_movement)
         self.x += horizontal_movement
