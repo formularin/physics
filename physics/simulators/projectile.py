@@ -1,14 +1,13 @@
-import time
-
-from physics.vectors import Vector
-from physics.bodies import Body
-from physics.canvas import canvas, root
-
-
 def run_projectile_simulation(angle=45, initial_speed=500, duration=2):
     """
     initial_speed * sin(angle) must be greater than 1, or else the ball can't get off the ground
     """
+    import time
+
+    from physics.vectors import Vector
+    from physics.bodies import Body
+    from physics.canvas import canvas, root
+
     canvas.create_line(0, 521, 1000, 521)
 
     r = int(initial_speed)
