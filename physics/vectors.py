@@ -6,8 +6,10 @@ class Vector:
     A quantity with both direction and magnitude
 
     2 possible ways of instantiating:
-     - cartesian coordinates (`p1`, `p2`)
-     - polar coordinates (`direction`, `magnitude`)
+     - cartesian coordinates (`x`, `y`)
+     - polar coordinates (`r`, `theta`)
+
+    *MUST BE KEYWORD AGRUMENTS. CANNOT BE POSITIONAL*
     """
 
     @classmethod
