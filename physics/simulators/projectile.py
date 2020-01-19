@@ -25,16 +25,17 @@ def run_projectile_simulation(angle=45, initial_speed=500, duration=2):
     root.update()
     time.sleep(0.5)
 
+    g = Vector(x=0, y=-9.8)
+
     fallen = False
     for frame in range(int(t / 0.01)):
         if ball.y >= 500 and frame != 0:
             if fallen == False:
                 canvas.move(ball.id, 0, 500 - ball.y)
                 fallen = True
-            ball.velocity.y = 0
-            ball.velocity.x = 0
+            ball.velocity = Vector(x=0, y=0)
         else:
-            ball.velocity.y += -9.8 * (frame * 0.01)
+            ball.velocity += g
 
         ball.move(0.01)
         root.update()
