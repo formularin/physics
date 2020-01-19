@@ -89,9 +89,21 @@ class Vector:
             return self.y
 
     def __add__(self, other):
-        return Vector(
-            x=(self.horizontal_component + other.horizontal_component),
-            y=(self.vertical_component + other.vertical_component))
+        if (t := type(other)) == type(self):
+            return Vector(
+                x=(self.horizontal_component + other.horizontal_component),
+                y=(self.vertical_component + other.vertical_component))
+        else:
+            raise TypeError
+
+    def __mul__(self, other):
+        if (t := type(other)) in [type(1), type(1.0)]:
+            return Vector(
+                r=(self.magnitude * other),
+                theta=self.direction
+            )
+        else:
+            raise TypeError
 
     def __str__(self):
         return f"theta = {self.direction}\nr = {self.magnitude}\nx = {self.horizontal_component}\ny = {self.vertical_component}"
