@@ -17,7 +17,7 @@ class Vector:
         """
         finds length of vector using distance formula
         """
-        return utils.distance(x, y, 0, 0)
+        return utils.distance((x, y), (0, 0))
 
     @classmethod
     def get_direction(cls, x, y):
