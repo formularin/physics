@@ -1,4 +1,4 @@
-import math
+from physics import utils
 
 
 class Vector:
@@ -17,14 +17,17 @@ class Vector:
         """
         finds length of vector using distance formula
         """
-        return math.sqrt((x ** 2) + (y ** 2))
+        return utils.distance(x, y, 0, 0)
 
     @classmethod
     def get_direction(cls, x, y):
         """
         finds angle of vector from coords
         """
-        return math.degrees(math.atan(y / x))
+        try:
+            return utils.atan(y / x)
+        except ZeroDivisionError:
+            return 0
 
     @classmethod
     def get_horizontal_component(cls, r, theta):
@@ -32,7 +35,7 @@ class Vector:
         finds horizontal component (x coord) 
         of vector from polar coords
         """
-        return r * math.cos(math.radians(theta))
+        return r * utils.cos(theta)
 
     @classmethod
     def get_vertical_component(cls, r, theta):
@@ -40,7 +43,7 @@ class Vector:
         finds vertical component (y coord)
         of vector from polar coords
         """
-        return r * math.sin(math.radians(theta))
+        return r * utils.sin(theta)
 
 
     def __init__(self, **kwargs):
