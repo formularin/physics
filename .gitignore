@@ -2,3 +2,5 @@ venv
 .DS_Store
 physics.egg-info
 */**/__pycache__
+.vscode
+*/**/test.py
