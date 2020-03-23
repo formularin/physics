@@ -21,8 +21,6 @@ Example:
 python3 physics projectile --angle 45 --initial_speed 500 --duration 2
 ```
 
-*You have to re-install the package every time a new simulator is added*
-
 ## Simulators
 
 All simulators have the `duration` option, which is how long the program will run for.
